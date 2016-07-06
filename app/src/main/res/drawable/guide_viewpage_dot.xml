@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--选中的页面使用白色按钮,其他是黑色-->
+    <item android:drawable="@drawable/guide_viewpage_dot_dark" android:state_enabled="true"/>
+    <item android:drawable="@drawable/guide_viewpage_dot_white" android:state_enabled="false"/>
+
+</selector>
