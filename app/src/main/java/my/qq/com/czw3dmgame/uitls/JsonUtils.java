@@ -22,22 +22,23 @@ public class JsonUtils {
                 JSONObject root=new JSONObject(json);
                 JSONObject data=root.getJSONObject("data");
 
-                for (int i=0;i<20;i++){
+                for (int i=0;i<10;i++){
                     JSONObject jsonObject=data.getJSONObject(i+"");
                     String id=jsonObject.getString("id");
-
+                    String typeid=jsonObject.getString("typeid");
                     String title=jsonObject.getString("title");
                     String shorttitle=jsonObject.getString("shorttitle");
                     String litpic="http://www.3dmgame.com"+jsonObject.getString("litpic");
                     String senddate=jsonObject.getString("senddate");
                     String feedback=jsonObject.getString("feedback");
+                    String arcurl=jsonObject.getString("arcurl");
                     byte[] b=HttpUtils.request(litpic);
 
                     //调用下载图片的方法,并返回图片保存路径
                     String imgpath= DownLoaddataService.saveFile(b,id+".jpg");
                     Log.i("aaa","图片保存路径"+imgpath);
 
-                    News news=new News(id,title,shorttitle,imgpath,senddate,feedback);
+                    News news=new News(id,typeid,title,shorttitle,imgpath,senddate,feedback,arcurl);
 
                     list.add(news);
 
