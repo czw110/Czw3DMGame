@@ -35,6 +35,8 @@ public class GuideActivity extends AppCompatActivity implements ViewPager.OnPage
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // 隐去标题栏 （应用程序的名字）
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_guide);
         initView();
         initDot();

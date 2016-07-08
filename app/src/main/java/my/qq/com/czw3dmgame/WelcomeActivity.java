@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.WindowManager;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.Toast;
@@ -25,6 +26,10 @@ public class WelcomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // 隐去标题栏 （应用程序的名字）
+        getSupportActionBar().hide();
+        // 全屏方法二 ：隐去状态栏部分 (电池等图标和一切修饰部分)
+        getWindow().setFlags( WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager .LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_welcome);
         gifImageView= (GifImageView) this.findViewById(R.id.WelcomeActivity_giv);
         //给欢迎界面添加一个动画,动画期间可以启动服务做其他事,下载数据等
@@ -40,8 +45,10 @@ public class WelcomeActivity extends AppCompatActivity {
                 if (netopen){
                     //开始Service，下载数据
                     Intent intent=new Intent(WelcomeActivity.this, DownLoaddataService.class);
-                    String path="http://www.3dmgame.com/sitemap/api.php?row=20&typeid=1&paging=1&page=1";
+                    String path="http://www.3dmgame.com/sitemap/api.php?row=10&typeid=1&paging=1&page=1";
+                    String path1="http://www.3dmgame.com/sitemap/api.php?row=10&typeid=151&paging=1&page=1";
                     intent.putExtra("path",path);
+                    intent.putExtra("path1",path1);
                     startService(intent);
                     Log.i("aaa","启动服务,开始下载");
                 }
@@ -82,4 +89,6 @@ public class WelcomeActivity extends AppCompatActivity {
             finish();
         }
     }
+
+
 }
