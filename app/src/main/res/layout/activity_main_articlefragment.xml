@@ -3,9 +3,10 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
     <FrameLayout
+        android:id="@+id/activity_main_articlefragment_framelayout"
         android:layout_width="match_parent"
         android:layout_height="140dp">
-
+        <!--下面这个控件是三个滑动的大图,是自定义的控件-->
         <my.qq.com.czw3dmgame.customview.MainArticleFragmentViewPager
             android:id="@+id/main_articlefragment_viewpager"
             android:layout_width="match_parent"
@@ -17,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center_horizontal"
             android:orientation="horizontal">
-
+             <!--这三个view是三张大图滑动时的三个黑点-->
             <View
                 android:layout_width="5dp"
                 android:layout_height="5dp"

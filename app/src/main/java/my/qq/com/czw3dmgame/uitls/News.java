@@ -12,8 +12,9 @@ public class News {
     private String senddate;
     private String weight;
     private String arcurl;
+    private String description;
 
-    public News(int id, String typeid, String title, String shorttitle, String litpic, String senddate, String weight, String arcurl) {
+    public News(int id, String typeid, String title, String shorttitle, String litpic, String senddate, String weight, String arcurl, String description) {
         this.id = id;
         this.typeid = typeid;
         this.title = title;
@@ -22,12 +23,13 @@ public class News {
         this.senddate = senddate;
         this.weight = weight;
         this.arcurl = arcurl;
+        this.description = description;
     }
 
     @Override
     public String toString() {
         return "News{" +
-                "id='" + id + '\'' +
+                "id=" + id +
                 ", typeid='" + typeid + '\'' +
                 ", title='" + title + '\'' +
                 ", shorttitle='" + shorttitle + '\'' +
@@ -35,6 +37,7 @@ public class News {
                 ", senddate='" + senddate + '\'' +
                 ", weight='" + weight + '\'' +
                 ", arcurl='" + arcurl + '\'' +
+                ", description='" + description + '\'' +
                 '}';
     }
 
@@ -90,8 +93,8 @@ public class News {
         return weight;
     }
 
-    public void setWeight(String feedback) {
-        this.weight = feedback;
+    public void setWeight(String weight) {
+        this.weight = weight;
     }
 
     public String getArcurl() {
@@ -100,5 +103,13 @@ public class News {
 
     public void setArcurl(String arcurl) {
         this.arcurl = arcurl;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

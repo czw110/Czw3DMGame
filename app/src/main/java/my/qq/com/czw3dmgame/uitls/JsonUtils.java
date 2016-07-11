@@ -32,20 +32,20 @@ public class JsonUtils {
                     String senddate=jsonObject.getString("senddate");
                     String weight=jsonObject.getString("weight");
                     String arcurl=jsonObject.getString("arcurl");
+                    String description=jsonObject.getString("description");
+
                     byte[] b=HttpUtils.request(litpic);
 
                     //调用下载图片的方法,并返回图片保存路径
-                    String imgpath= DownLoaddataService.saveFile(b,id+".jpg");
+                    String imgpath= DownloadUtils.saveFile(b,id+".jpg");
                     Log.i("aaa","图片保存路径"+imgpath);
 
-                    News news=new News(id,typeid,title,shorttitle,imgpath,senddate,weight,arcurl);
+                    News news=new News(id,typeid,title,shorttitle,imgpath,senddate,weight,arcurl,description);
 
                     list.add(news);
 
                 }
-                //调用存入数据库的方法
-                boolean flag=DownLoaddataService.saveData(list);
-                Log.i("aaa","数据存完"+flag);
+
 
             } catch (JSONException e) {
                 e.printStackTrace();

@@ -45,10 +45,16 @@ public class WelcomeActivity extends AppCompatActivity {
                 if (netopen){
                     //开始Service，下载数据
                     Intent intent=new Intent(WelcomeActivity.this, DownLoaddataService.class);
-                    String path="http://www.3dmgame.com/sitemap/api.php?row=10&typeid=1&paging=1&page=1";
-                    String path1="http://www.3dmgame.com/sitemap/api.php?row=10&typeid=151&paging=1&page=1";
+                    String path="http://www.3dmgame.com/sitemap/api.php?row=10&typeid=2&paging=1&page=1";
+                    String path1="http://www.3dmgame.com/sitemap/api.php?row=20&typeid=151&paging=1&page=1";
+                    String path2="http://www.3dmgame.com/sitemap/api.php?row=10&typeid=152&paging=1&page=1";
+                    String path3="http://122.226.122.6/sitemap/api.php?row=20&typeid=179&paging=1&page=1";
+                    String path4="http://www.3dmgame.com/sitemap/api.php?row=10&typeid=179&paging=1&page=2";
                     intent.putExtra("path",path);
                     intent.putExtra("path1",path1);
+                    intent.putExtra("path2",path2);
+                    intent.putExtra("path3",path3);
+                    intent.putExtra("path4",path4);
                     startService(intent);
                     Log.i("aaa","启动服务,开始下载");
                 }

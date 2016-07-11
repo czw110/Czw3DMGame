@@ -27,7 +27,8 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".BbsActivity"></activity>
+        <activity android:name=".DetailsActivity" />
+        <activity android:name=".GamePaperActivity"></activity>
     </application>
 
 </manifest>
