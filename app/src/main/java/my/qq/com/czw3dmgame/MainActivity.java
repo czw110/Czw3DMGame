@@ -82,11 +82,11 @@ public class MainActivity extends FragmentActivity implements RadioGroup.OnCheck
         ArticleFragment f3 = new ArticleFragment(151);//游戏杂谈
         ArticleFragment f4 = new ArticleFragment(152);//硬件信息
         ArticleFragment f5 = new ArticleFragment(153);//游戏前瞻
-        ArticleFragment f6 = new ArticleFragment(154);
-        ArticleFragment f7 = new ArticleFragment(196);
-        ArticleFragment f8 = new ArticleFragment(197);
-        ArticleFragment f9 = new ArticleFragment(9);
-        ArticleFragment f10 = new ArticleFragment(10);
+        ArticleFragment f6 = new ArticleFragment(151);
+        ArticleFragment f7 = new ArticleFragment(152);
+        ArticleFragment f8 = new ArticleFragment(153);
+        ArticleFragment f9 = new ArticleFragment(151);
+        ArticleFragment f10 = new ArticleFragment(152);
         BbsFragment b1 = new BbsFragment();
         GameFragment g1=new GameFragment();
         fragments.add(f1);

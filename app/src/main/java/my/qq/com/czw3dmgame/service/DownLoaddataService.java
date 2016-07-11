@@ -27,7 +27,8 @@ public class DownLoaddataService extends Service {
         String path2 = intent.getStringExtra("path2");
         String path3 = intent.getStringExtra("path3");
         String path4 = intent.getStringExtra("path4");
-        final String[] paths = {path3, path1, path2, path, path4};
+        String path5 = intent.getStringExtra("path5");
+        final String[] paths = {path3, path, path1, path2, path4,path5};
         String url = "";
         for (int j = 0; j < paths.length; j++) {
             url = paths[j];

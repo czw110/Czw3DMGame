@@ -34,7 +34,7 @@ public class WelcomeActivity extends AppCompatActivity {
         gifImageView= (GifImageView) this.findViewById(R.id.WelcomeActivity_giv);
         //给欢迎界面添加一个动画,动画期间可以启动服务做其他事,下载数据等
         animation=new AlphaAnimation(0,1.0f);//透明度动画
-        animation.setDuration(3000);
+        animation.setDuration(5000);
         gifImageView.startAnimation(animation);
         //给动画添加监听,在动画开始和结束的时候执行操作
         animation.setAnimationListener(new Animation.AnimationListener() {
@@ -47,14 +47,16 @@ public class WelcomeActivity extends AppCompatActivity {
                     Intent intent=new Intent(WelcomeActivity.this, DownLoaddataService.class);
                     String path="http://www.3dmgame.com/sitemap/api.php?row=10&typeid=2&paging=1&page=1";
                     String path1="http://www.3dmgame.com/sitemap/api.php?row=20&typeid=151&paging=1&page=1";
-                    String path2="http://www.3dmgame.com/sitemap/api.php?row=10&typeid=152&paging=1&page=1";
+                    String path2="http://www.3dmgame.com/sitemap/api.php?row=20&typeid=152&paging=1&page=1";
                     String path3="http://122.226.122.6/sitemap/api.php?row=20&typeid=179&paging=1&page=1";
-                    String path4="http://www.3dmgame.com/sitemap/api.php?row=10&typeid=179&paging=1&page=2";
+                    String path4="http://www.3dmgame.com/sitemap/api.php?row=20&typeid=179&paging=1&page=2";
+                    String path5="http://www.3dmgame.com/sitemap/api.php?row=10&typeid=153&paging=1&page=1";
                     intent.putExtra("path",path);
                     intent.putExtra("path1",path1);
                     intent.putExtra("path2",path2);
                     intent.putExtra("path3",path3);
                     intent.putExtra("path4",path4);
+                    intent.putExtra("path5",path5);
                     startService(intent);
                     Log.i("aaa","启动服务,开始下载");
                 }
